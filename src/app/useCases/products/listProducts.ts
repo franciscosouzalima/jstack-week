@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 import { Product  } from '../../models/Product';
 
-export async function listCategories(req: Request, res: Response) {
+export async function listProducts(req: Request, res: Response) {
 
   try {
     const products = await Product.find();
