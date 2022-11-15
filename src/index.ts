@@ -16,7 +16,7 @@ mongoose.connect(`mongodb://localhost:${dbPort}`)
 
     app.use(morgan('dev'));
 
-    app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
+    app.use('/api/v1/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
     app.use(express.json());
     app.use('/api/v1/', router);
 
