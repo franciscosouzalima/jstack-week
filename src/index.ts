@@ -1,6 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
+import { router } from './router';
+
 const dbPort = 27017;
 
 mongoose.connect(`mongodb://localhost:${dbPort}`)
@@ -8,6 +10,8 @@ mongoose.connect(`mongodb://localhost:${dbPort}`)
 
     const app = express();
     const port = 3001;
+
+    app.use(router);
 
     app.listen(3001, () => {
       console.log(`💾 Connected do MongoDB on port: ${dbPort}`);
